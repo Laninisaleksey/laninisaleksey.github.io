@@ -5,8 +5,8 @@ iptables-restore < clear
 rm clear
 
 # Change the default chain policy to DROP, OUTPUT policy is ACCEPT
-iptables -P INPUT ACCEPT
-iptables -P FORWARD ACCEPT
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
 iptables -P OUTPUT ACCEPT
 
 sudo iptables -t nat -A POSTROUTING -o wlan1 -j MASQUERADE  
