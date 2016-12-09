@@ -1,0 +1,3 @@
+IP Parsed: 27.109.164.38
+Port Parsed: 992
+Interface Parsed: tun
