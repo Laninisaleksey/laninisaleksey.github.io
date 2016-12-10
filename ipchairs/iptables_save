@@ -1,4 +1,5 @@
+./trafic_off.sh                                                  #BLOCK ALL TRAFFIC
+                
+sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"              #to save the rules to the file /etc/iptables.ipv4.nat. 
 
-    However, we need these rules to be applied every time we reboot the Pi, so run sudo sh -c "iptables-save > /etc/iptables.ipv4.nat" to save the rules to the file /etc/iptables.ipv4.nat. Now we need to run this after each reboot, so open the /etc/rc.local file with sudo nano /etc/rc.local and just above the line exit 0, add the following line:
-
-    iptables-restore < /etc/iptables.ipv4.nat  
+#/etc/rc.local file with sudo nano /etc/rc.local and just above the line exit 0, add the following line: iptables-restore < /etc/iptables.ipv4.nat  
