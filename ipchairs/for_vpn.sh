@@ -32,8 +32,8 @@ echo "Port Parsed: "$port
 VPN_PORT=1580
 
 # Allow and LOG all traffic on VPN interface
-iptables -A OUTPUT -o $VPN_INT -j LOG --log-prefix='[OUT FROM VPN INTERFACE]'
-iptables -A INPUT -i $VPN_INT  -m state --state ESTABLISHED,RELATED -j LOG --log-prefix='[IN FROM VPN INTERFACE]'
+#iptables -A OUTPUT -o $VPN_INT -j LOG --log-prefix='[OUT FROM VPN INTERFACE]'
+#iptables -A INPUT -i $VPN_INT  -m state --state ESTABLISHED,RELATED -j LOG --log-prefix='[IN FROM VPN INTERFACE]'
 iptables -A OUTPUT -o $VPN_INT -j ACCEPT
 iptables -A INPUT -i $VPN_INT -m state --state ESTABLISHED,RELATED -j ACCEPT
 #iptables -A INPUT  -i $VPN_INT -j ACCEPT
@@ -47,8 +47,8 @@ iptables -N LOGGING_INPUT
 iptables -N LOGGING_OUTPUT
 iptables -A INPUT -j LOGGING_INPUT
 iptables -A OUTPUT -j LOGGING_OUTPUT
-iptables -A LOGGING_INPUT -j LOG --log-prefix='[BLOCKED IN]'
-iptables -A LOGGING_OUTPUT -j LOG --log-prefix='[BLOCKED OUT]'
+#iptables -A LOGGING_INPUT -j LOG --log-prefix='[BLOCKED IN]'
+#iptables -A LOGGING_OUTPUT -j LOG --log-prefix='[BLOCKED OUT]'
 iptables -A LOGGING_INPUT -j DROP
 iptables -A LOGGING_OUTPUT -j DROP
 
