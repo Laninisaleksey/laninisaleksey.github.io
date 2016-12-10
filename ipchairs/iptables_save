@@ -3,3 +3,6 @@
 sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"              #to save the rules to the file /etc/iptables.ipv4.nat. 
 
 #/etc/rc.local file with sudo nano /etc/rc.local and just above the line exit 0, add the following line: iptables-restore < /etc/iptables.ipv4.nat  
+
+edit strings of files for_vpn_log.sh or for_vpn.sh with "VPN server address (remote IP from VPN config file)" and "VPN port address (remote IP/port from VPN config file)"
+./for_vpn_log.sh or  	for_vpn.sh                                  #BLOCK ALL TRAFFIC exept rout to VPN server and TUNNEL
