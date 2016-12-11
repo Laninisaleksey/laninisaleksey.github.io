@@ -24,12 +24,12 @@ VPN_INT=tun0
 # VPN server address (remote IP from VPN config file)
 ip=`cat vpngate*.ovpn | grep -E "^remote" | awk '{print $2}'`
 echo "IP Parsed: "$ip
-VPN_SERVER=1.52.57.57
+VPN_SERVER=212.187.107.56
 
 # VPN port address (remote IP/port from VPN config file)
 port=`cat vpngate*.ovpn | grep -E "^remote" | awk '{print $3}'`
 echo "Port Parsed: "$port
-VPN_PORT=1580
+VPN_PORT=47
 
 # Allow and LOG all traffic on VPN interface
 iptables -A OUTPUT -o $VPN_INT -j LOG --log-prefix='[OUT FROM VPN INTERFACE]'
